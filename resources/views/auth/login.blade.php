@@ -35,7 +35,6 @@
             </form>
 
             <p style="margin-top:18px;">Akun Pustakawan dibuat oleh Admin melalui menu Manajemen User.</p>
-            <p class="muted">Demo: admin@lms.test / password</p>
         </section>
     </main>
 </body>
