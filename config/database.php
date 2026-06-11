@@ -113,6 +113,16 @@ return [
             // 'encrypt' => env('DB_ENCRYPT', 'yes'),
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
+        'd1' => [
+            'driver' => 'd1',
+            'prefix' => '',
+            'database' => env('CF_D1_DATABASE_ID'),
+            'api' => 'https://api.cloudflare.com/client/v4',
+            'auth' => [
+                'token' => env('CF_D1_API_TOKEN'),
+                'account_id' => env('CF_D1_ACCOUNT_ID'),
+            ],
+        ],
 
     ],
 
