@@ -126,7 +126,13 @@ button, input, select, textarea { font: inherit; }
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     color: #fff;
+}
+
+.brand-icon svg {
+    width: 18px;
+    height: 18px;
 }
 
 .brand-name {
