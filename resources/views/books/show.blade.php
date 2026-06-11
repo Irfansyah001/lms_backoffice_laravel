@@ -21,8 +21,8 @@
             <dt>Kategori</dt>
             <dd>{{ $book->category->name }}</dd>
 
-            <dt>Lokasi Rak</dt>
-            <dd>{{ $book->shelf_location ?: '-' }}</dd>
+            <dt>Rak</dt>
+            <dd>{{ $book->rack?->name ?: '-' }}</dd>
 
             <dt>Stok</dt>
             <dd>{{ $book->stock }}</dd>

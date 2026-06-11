@@ -29,7 +29,7 @@
 
             <div class="field">
                 <label for="category_id">Kategori</label>
-                <select id="category_id" name="category_id" required>
+                <select id="category_id" name="category_id" required data-combobox data-placeholder="Ketik nama kategori…">
                     <option value="">Pilih kategori</option>
                     @foreach ($categories as $category)
                         <option value="{{ $category->id }}" @selected(old('category_id') == $category->id)>{{ $category->name }}</option>
@@ -43,8 +43,13 @@
             </div>
 
             <div class="field">
-                <label for="shelf_location">Lokasi Rak</label>
-                <input id="shelf_location" type="text" name="shelf_location" value="{{ old('shelf_location') }}">
+                <label for="rack_id">Rak</label>
+                <select id="rack_id" name="rack_id" data-combobox data-placeholder="Ketik nama rak…">
+                    <option value="">Pilih rak (opsional)</option>
+                    @foreach ($racks as $rack)
+                        <option value="{{ $rack->id }}" @selected(old('rack_id') == $rack->id)>{{ $rack->name }}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
 

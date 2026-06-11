@@ -111,7 +111,6 @@ class LibraryBackofficeTest extends TestCase
             'publisher' => 'Kampus Media',
             'publication_year' => 2024,
             'stock' => 4,
-            'shelf_location' => 'A1',
             'status' => 'tersedia',
         ]);
 
@@ -474,7 +473,6 @@ class LibraryBackofficeTest extends TestCase
             'publisher' => 'Kampus Media',
             'publication_year' => 2024,
             'stock' => 0,
-            'shelf_location' => 'A1',
         ])->assertRedirect(route('books.index'));
 
         $this->assertDatabaseHas('books', [

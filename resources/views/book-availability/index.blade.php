@@ -24,7 +24,7 @@
                     <th>Judul</th>
                     <th>Penulis</th>
                     <th>Kategori</th>
-                    <th>Lokasi Rak</th>
+                    <th>Rak</th>
                     <th>Stok</th>
                     <th>Ketersediaan</th>
                 </tr>
@@ -41,7 +41,7 @@
                         </td>
                         <td>{{ $book->author }}</td>
                         <td>{{ $book->category->name }}</td>
-                        <td>{{ $book->shelf_location ?: '-' }}</td>
+                        <td>{{ $book->rack?->name ?: '-' }}</td>
                         <td><span class="badge {{ $book->stock > 0 ? 'success' : 'danger' }}">{{ $book->stock }}</span></td>
                         <td>
                             <span class="badge {{ $isAvailable ? 'success' : 'danger' }}">

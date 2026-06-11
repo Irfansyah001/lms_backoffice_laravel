@@ -8,6 +8,7 @@ use App\Http\Controllers\BorrowingController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\RackController;
 use App\Http\Controllers\ReturnController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -26,6 +27,7 @@ Route::middleware(['auth', 'active'])->group(function () {
     Route::put('/account/password', [AccountController::class, 'updatePassword'])->name('account.password.update');
 
     Route::resource('users', UserController::class)->except(['show'])->middleware('admin');
+    Route::resource('racks', RackController::class)->except(['show'])->middleware('admin');
     Route::resource('categories', CategoryController::class)->except(['show'])->middleware('admin');
     Route::resource('books', BookController::class)->middleware('admin');
     Route::get('/book-availability', [BookAvailabilityController::class, 'index'])->name('book-availability.index');

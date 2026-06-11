@@ -223,6 +223,7 @@ class BorrowingController extends Controller
     private function formData(?Borrowing $borrowing = null): array
     {
         $books = Book::query()
+            ->with(['category', 'rack'])
             ->where(function ($query) use ($borrowing) {
                 $query->where(function ($availableBookQuery) {
                     $availableBookQuery->where('status', 'tersedia')

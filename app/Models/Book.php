@@ -13,12 +13,12 @@ class Book extends Model
 
     protected $fillable = [
         'category_id',
+        'rack_id',
         'title',
         'author',
         'publisher',
         'publication_year',
         'stock',
-        'shelf_location',
         'status',
         'created_by',
         'updated_by',
@@ -27,6 +27,11 @@ class Book extends Model
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function rack(): BelongsTo
+    {
+        return $this->belongsTo(Rack::class);
     }
 
     public function borrowings(): HasMany

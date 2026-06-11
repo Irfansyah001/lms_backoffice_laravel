@@ -39,7 +39,7 @@
                         <td>{{ $book->author }}</td>
                         <td>{{ $book->category->name }}</td>
                         <td><span class="badge {{ $book->stock <= 2 ? 'warning' : 'success' }}">{{ $book->stock }}</span></td>
-                        <td>{{ $book->shelf_location ?: '-' }}</td>
+                        <td>{{ $book->rack?->name ?: '-' }}</td>
                         <td><span class="badge {{ $book->status === 'tersedia' ? 'success' : 'danger' }}">{{ str_replace('_', ' ', ucfirst($book->status)) }}</span></td>
                         <td>
                             <div class="actions">

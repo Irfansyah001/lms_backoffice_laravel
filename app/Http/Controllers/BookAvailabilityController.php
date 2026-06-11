@@ -12,12 +12,13 @@ class BookAvailabilityController extends Controller
     {
         $search = $request->input('q');
 
-        $books = Book::with('category')
+        $books = Book::with(['category', 'rack'])
             ->when($search, function ($query, string $search) {
                 $query->where(function ($searchQuery) use ($search) {
                     $searchQuery->where('title', 'like', "%{$search}%")
                         ->orWhere('author', 'like', "%{$search}%")
-                        ->orWhereHas('category', fn ($categoryQuery) => $categoryQuery->where('name', 'like', "%{$search}%"));
+                        ->orWhereHas('category', fn ($categoryQuery) => $categoryQuery->where('name', 'like', "%{$search}%"))
+                        ->orWhereHas('rack', fn ($rackQuery) => $rackQuery->where('name', 'like', "%{$search}%"));
                 });
             })
             ->orderBy('title')

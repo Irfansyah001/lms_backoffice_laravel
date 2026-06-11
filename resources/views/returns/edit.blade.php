@@ -18,7 +18,9 @@
 
             <div class="field">
                 <label for="returned_at">Tanggal Pengembalian</label>
-                <input id="returned_at" type="date" name="returned_at" value="{{ old('returned_at', now()->toDateString()) }}" required>
+                <input id="returned_at" type="date" name="returned_at"
+                       value="{{ old('returned_at', now()->toDateString()) }}"
+                       required>
             </div>
         </div>
 
